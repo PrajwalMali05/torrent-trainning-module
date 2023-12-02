@@ -1,0 +1,286 @@
+<!-- <mat-card>
+    <mat-card-content>
+        <form class="example-form" [formGroup]="registerForm"
+            (ngSubmit)="addUser()">
+            <mat-form-field class="example-full-width">
+                <mat-label>Player Name</mat-label>
+                <input matInput formControlName="playerName" type="text">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Employee ID</mat-label>
+                <input matInput formControlName="id" type="number">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>PSC</mat-label>
+                <input matInput formControlName="psc" type="text">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Department</mat-label>
+                <input matInput formControlName="dept" type="text">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Password</mat-label>
+                <input matInput formControlName="password" type="password">
+            </mat-form-field>
+            <div>
+                <button type="submit" mat-raised-button color="warn">Submit</button>
+                <a routerLink="/login" style="margin-left: 10px;" mat-raised-button >Back to Login</a>
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card> -->
+<div class="main">
+    <div class="login_child"></div>
+    <div class="right">
+        <img class="login-item round_image" alt src="assets/public/vector-1.svg" />
+        <img
+            class="bd048a-a518-46c9-8cb2-7d8f354d-icon person_image"
+            alt
+            src="assets/public/fgdfs-1@2x.png" />
+    </div>
+    <div class="left">
+        <div class="left_img_text">
+            <div>
+                <img
+                    class="torrent_logo"
+                    alt="torrent_logo"
+                    src="assets/public/torrentpower-transparent-1@2x.png" /></div>
+
+        </div>
+        <div class="welcome-torrent">
+            <div>
+                <span>Welcome to </span>
+                <span class="t">T</span>
+                <span>orrent</span>
+                <span class="t"> P</span>
+                <span>ower</span>
+            </div>
+        </div>
+        <form class="example-form" [formGroup]="registerForm"
+            (ngSubmit)="addUser()">
+            <div class="login_text">SIGN UP</div>
+            <div class="login_form">
+                <div class="employee_id">
+                    <div class="enter_id_sign_up">
+                        Player Name<span class="required">*</span>
+                        <div class="input_id">
+                            <input type="text" class="input_tag"
+                                placeholder="Enter Player Name"
+                                formControlName="playerName">
+                        </div>
+                        <span class="text-danger validation_text"
+                                *ngIf="(registerFormControl.playerName.touched || registerFormControl.playerName.dirty) && registerFormControl.playerName.errors?.['minlength'] && submitted">
+                                Length of Player Name should be atleast 3.
+                            </span>
+                            <span class="text-danger validation_text"
+                                *ngIf="(registerFormControl.playerName.touched || registerFormControl.playerName.dirty) && registerFormControl.playerName.errors?.['required'] && submitted">
+                                Player Name is required.
+                            </span>
+                    </div>
+                </div>
+                <div class="employee_id">
+                    <div class="enter_id_sign_up">
+                        Employee ID<span class="required">*</span>
+                        <div class="input_id">
+                            <input type="text" class="input_tag"
+                                placeholder="Your Employee id here"
+                                formControlName="id">
+                        </div>
+                        <span class="text-danger validation_text"
+                        *ngIf="(registerFormControl.id.touched || registerFormControl.id.dirty) && registerFormControl.id.errors?.['minlength'] && submitted">
+                        Length of Employee ID should be atleast 3.
+                    </span>
+                    <span class="text-danger validation_text"
+                        *ngIf="(registerFormControl.id.touched || registerFormControl.id.dirty) && registerFormControl.id.errors?.['required'] && submitted">
+                        Employee ID is required.
+                    </span>
+                    </div>
+                </div>
+                <div class="employee_id">
+                    <div class="enter_id_sign_up">
+                        PSC
+                        <div class="input_id">
+                            <input type="text" class="input_tag"
+                                placeholder="Enter PSC"
+                                formControlName="psc">
+                        </div>
+                        <span class="text-danger validation_text"
+                                *ngIf="(registerFormControl.psc.touched || registerFormControl.psc.dirty) && registerFormControl.psc.errors?.['minlength'] && submitted">
+                                Length of PSC should be atleast 3.
+                            </span>
+                            <span class="text-danger validation_text"
+                                *ngIf="(registerFormControl.psc.touched || registerFormControl.psc.dirty) && registerFormControl.psc.errors?.['required'] && submitted">
+                                PSC is required.
+                            </span>
+                    </div>
+                </div>
+                <div class="employee_id">
+                    <div class="enter_id_sign_up">
+                        Department
+                        <div class="input_id">
+                            <input type="text" class="input_tag"
+                                placeholder="Enter Department"
+                                formControlName="dept">
+                        </div>
+                        <span class="text-danger validation_text"
+                                *ngIf="(registerFormControl.dept.touched || registerFormControl.dept.dirty) && registerFormControl.dept.errors?.['minlength'] && submitted">
+                                Length of Departments should be atleast 3.
+                            </span>
+                            <span class="text-danger validation_text"
+                                *ngIf="(registerFormControl.dept.touched || registerFormControl.dept.dirty) && registerFormControl.dept.errors?.['required'] && submitted">
+                                Department is required.
+                            </span>
+                    </div>
+                </div>
+                <div class="employee_id">
+                    <div class="enter_id_sign_up">
+                        Password<span class="required">*</span>
+                        <div class="input_id">
+                            <input type="password" class="input_tag"
+                                placeholder="Your Password"
+                                formControlName="password">
+                        </div>
+                        <span class="text-danger validation_text"
+                        *ngIf="(registerFormControl.password.touched || registerFormControl.password.dirty) && registerFormControl.password.errors?.['minlength'] && submitted">
+                        Length of Password should be atleast 3.
+                    </span>
+                    <span class="text-danger validation_text"
+                        *ngIf="(registerFormControl.password.touched || registerFormControl.password.dirty) && registerFormControl.password.errors?.['required'] && submitted">
+                        Password is required.
+                    </span>
+                    </div>
+                </div>
+                <div class="login_button">
+                    <button class="login_button_text" type="submit">Sign Up</button>
+                </div>
+                <div class="sign_up_text">
+                    Already have an account? <span><a routerLink="/login">LOGIN</a></span>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+<div class="main_mobile">
+    <div class="mob_image">
+        <img class="rotate_image" alt
+            src="assets/public/vector-1.9d54aa21.png" />
+        <img
+            class="bd048a-a518-46c9-8cb2-7d8f354d-icon person_image_mobile"
+            alt
+            src="assets/public/fgdfs-1@2x.png" />
+        <img
+            class="bd048a-a518-46c9-8cb2-7d8f354d-icon logo_image_mobile"
+            alt
+            src="assets/public/torrentpower-transparent-1@2x.png" />
+    </div>
+    <div class="second_block_mobile">
+        <div class="welcome_torrent_mobile">
+            <div>
+                <span>Welcome to </span>
+                <span class="t">T</span>
+                <span>orrent</span>
+                <span class="t"> P</span>
+                <span>ower</span>
+            </div>
+        </div>
+        <form class="example-form" [formGroup]="registerForm"
+            (ngSubmit)="addUser()">
+            <div class="login_text">SIGN UP</div>
+            <div class="login_form_mobile">
+                <div class="employee_id">
+                    <div class="enter_id_sign_up">
+                        Player Name<span class="required">*</span>
+                        <div class="input_id">
+                            <input type="text" class="input_tag"
+                                formControlName="playerName">
+                        </div>
+                        <span class="text-danger validation_text"
+                                *ngIf="(registerFormControl.playerName.touched || registerFormControl.playerName.dirty) && registerFormControl.playerName.errors?.['minlength'] && submitted">
+                                Length of Player Name should be atleast 3.
+                            </span>
+                            <span class="text-danger validation_text"
+                                *ngIf="(registerFormControl.playerName.touched || registerFormControl.playerName.dirty) && registerFormControl.playerName.errors?.['required'] && submitted">
+                                Player Name is required.
+                            </span>
+                    </div>
+                </div>
+                <div class="employee_id">
+                    <div class="enter_id_sign_up">
+                        Employee ID<span class="required">*</span>
+                        <div class="input_id">
+                            <input type="text" class="input_tag"
+                                formControlName="id">
+                        </div>
+                        <span class="text-danger validation_text"
+                                *ngIf="(registerFormControl.id.touched || registerFormControl.id.dirty) && registerFormControl.id.errors?.['minlength'] && submitted">
+                                Length of Employee ID should be atleast 3.
+                            </span>
+                            <span class="text-danger validation_text"
+                                *ngIf="(registerFormControl.id.touched || registerFormControl.id.dirty) && registerFormControl.id.errors?.['required'] && submitted">
+                                Employee ID is required.
+                            </span>
+                    </div>
+                </div>
+                <div class="employee_id">
+                    <div class="enter_id_sign_up">
+                        PSC
+                        <div class="input_id">
+                            <input type="text" class="input_tag"                               
+                                formControlName="psc">
+                        </div>
+                        <span class="text-danger validation_text"
+                                *ngIf="(registerFormControl.psc.touched || registerFormControl.psc.dirty) && registerFormControl.psc.errors?.['minlength'] && submitted">
+                                Length of PSC should be atleast 3.
+                            </span>
+                            <span class="text-danger validation_text"
+                                *ngIf="(registerFormControl.psc.touched || registerFormControl.psc.dirty) && registerFormControl.psc.errors?.['required'] && submitted">
+                                PSC is required.
+                            </span>
+                    </div>
+                </div>
+                <div class="employee_id">
+                    <div class="enter_id_sign_up">
+                        Department
+                        <div class="input_id">
+                            <input type="text" class="input_tag"                               
+                                formControlName="dept">
+                        </div>
+                        <span class="text-danger validation_text"
+                                *ngIf="(registerFormControl.dept.touched || registerFormControl.dept.dirty) && registerFormControl.dept.errors?.['minlength'] && submitted">
+                                Length of PSC should be atleast 3.
+                            </span>
+                            <span class="text-danger validation_text"
+                                *ngIf="(registerFormControl.dept.touched || registerFormControl.dept.dirty) && registerFormControl.dept.errors?.['required'] && submitted">
+                                PSC is required.
+                            </span>
+                    </div>
+                </div>
+                <div class="employee_id">
+                    <div class="enter_id_sign_up">
+                        Password<span class="required">*</span>
+                        <div class="input_id">
+                            <input type="password" class="input_tag"                               
+                                formControlName="password">
+                        </div>
+                        <span class="text-danger validation_text"
+                        *ngIf="(registerFormControl.password.touched || registerFormControl.password.dirty) && registerFormControl.password.errors?.['minlength'] && submitted">
+                        Length of Password should be atleast 3.
+                    </span>
+                    <span class="text-danger validation_text"
+                        *ngIf="(registerFormControl.password.touched || registerFormControl.password.dirty) && registerFormControl.password.errors?.['required'] && submitted">
+                        Password is required.
+                    </span>
+                    </div>
+                </div>
+                <div class="login_button">
+                    <button class="login_button_text_mobile" type="submit">Sign Up</button>
+                </div>
+                <div class="sign_up_text">
+                    Already have an account? <span><a routerLink="/login">LOGIN</a></span>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>

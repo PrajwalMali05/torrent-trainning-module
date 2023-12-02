@@ -1,0 +1,39 @@
+<button mat-raised-button class="add_button" routerLink="/admin">Go Back</button><br>
+<div class="form-group row col-md-6">
+    <label class="my-1 mr-2 label_course" for="select_course"
+        style="justify-content: left;">Select
+        Course</label>
+    <select class="custom-select my-1 mr-sm-2" id="select_course"
+        (change)="loadSubMenu($event.target.value)"
+        >
+        <option selected >Select Course</option>
+        <option *ngFor="let c of course" value={{c.c_id}}>
+            {{c.c_name}}
+        </option>
+    </select>
+</div>
+<div class="view_course_container" *ngIf="step1" >
+    <mat-spinner *ngIf="spinner"> </mat-spinner>
+    <div class="container" *ngIf="results">       
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Player Name</th>
+                    <th scope="col">Employee ID</th>
+                    <th scope="col">Total Marks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let result of results">
+                    <td scope="row">{{result?.player_name}}</td>
+                    <td >{{result?.emp_id}}</td>
+                    <td >{{result?.total_marks}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <div *ngIf="!results">
+        <h5>This course has not been assinged to any employee</h5>
+    </div>
+</div>

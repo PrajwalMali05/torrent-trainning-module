@@ -1,0 +1,192 @@
+<!-- <mat-card>
+    <mat-card-content>
+        <form class="example-form" [formGroup]="loginForm"
+            (ngSubmit)="loginUser()">
+            <mat-form-field class="example-full-width" >
+                <mat-label>Employee ID</mat-label>
+                <input matInput formControlName="id" type="number">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" >
+                <mat-label>Password</mat-label>
+                <input matInput formControlName="password" type="password">
+            </mat-form-field>
+            <div>
+                <button type="submit" mat-raised-button color="warn" >Login</button>
+                <a routerLink="/register" style="margin-left: 10px;" mat-raised-button>Sign Up</a>
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card> -->
+
+<div class="main">
+    <div class="login_child"></div>
+    <div class="right">
+        <img class="login-item round_image" alt src="assets/public/vector-1.svg" />
+        <img
+            class="bd048a-a518-46c9-8cb2-7d8f354d-icon person_image"
+            alt
+            src="assets/public/21bd048aa51846c98cb27d8f354d94f7-1@2x.png" />
+    </div>
+    <div class="left">
+        <div class="left_img_text">
+            <div>
+                <img
+                    class="torrent_logo"
+                    alt="torrent_logo"
+                    src="assets/public/torrentpower-transparent-1@2x.png" /></div>
+
+        </div>
+        <div class="welcome-torrent">
+            <div>
+                <span>Welcome to </span>
+                <span class="t">T</span>
+                <span>orrent</span>
+                <span class="t"> P</span>
+                <span>ower</span>
+            </div>
+        </div>
+        <form class="example-form" [formGroup]="loginForm"
+            (ngSubmit)="loginUser()">
+            <div class="login_text">LOGIN</div>
+            <div class="login_form">
+                <div class="employee_id">
+                    <div class="enter_id">
+                        Employee ID<span class="required">*</span>
+                        <div class="input_id">
+                            <input type="text" class="input_tag"
+                                 placeholder="Your Employee id here"
+                                formControlName="id">
+                        </div>
+                        <!-- <div class="form-control-feedback"
+                            *ngIf="loginForm['id'].errors && (loginForm['id'].dirty || loginForm['id'].touched)">
+                            <p *ngIf="loginForm['id'].errors.required">EmployeeId is required</p>
+                           
+                            <p *ngIf="loginForm['id'].errors.minLength">Employee id length should be greater than 3</p>
+                        </div> -->  
+                        <span class="text-danger validation_text"
+                                *ngIf="(registerFormControl.id.touched || registerFormControl.id.dirty) && registerFormControl.id.errors?.['minlength'] && submitted">
+                                Length of Employee ID should be atleast 3.
+                            </span>
+                            <span class="text-danger validation_text"
+                                *ngIf="(registerFormControl.id.touched || registerFormControl.id.dirty) && registerFormControl.id.errors?.['required'] && submitted">
+                                Employee is required
+                            </span>
+                    </div>
+                </div>
+                <div class="employee_id">
+                    <div class="enter_id">
+                        Password<span class="required">*</span>
+                        <div class="input_id">
+                            <input type="password" class="input_tag"
+                                placeholder="Your Password"
+                                formControlName="password">
+                        </div>
+                        <span class="text-danger validation_text"
+                                *ngIf="(registerFormControl.password.touched || registerFormControl.password.dirty) && registerFormControl.password.errors?.['required'] && submitted">
+                                Password is required
+                            </span>
+                    </div>
+                </div>
+                <div class="checkbox_forgot">
+                    <div>
+                        <input type="checkbox" id="remember_login"
+                            formControlName="remember">&nbsp;&nbsp;<label
+                            for="remember_login">Remember Me</label>
+                    </div>
+                    <div class="checkbox_remember">
+                        <a routerLink="/forgot-password">Forgot Password</a>
+                    </div>
+                </div>
+                <div class="login_button">
+                    <button class="login_button_text" type="submit">Login</button>
+                </div>
+                <div class="sign_up_text">
+                    Don’t have an account? <span><a routerLink="/register">SIGN
+                            UP</a></span>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+<div class="main_mobile">
+    <div class="mob_image">
+        <img class="rotate_image" alt
+            src="assets/public/vector-1.9d54aa21.png" />
+        <img
+            class="bd048a-a518-46c9-8cb2-7d8f354d-icon person_image_mobile"
+            alt
+            src="assets/public/21bd048aa51846c98cb27d8f354d94f7-1@2x.png" />
+        <img
+            class="bd048a-a518-46c9-8cb2-7d8f354d-icon logo_image_mobile"
+            alt
+            src="assets/public/torrentpower-transparent-1@2x.png" />
+    </div>
+    <div class="second_block_mobile">
+        <div class="welcome_torrent_mobile">
+            <div>
+                <span>Welcome to </span>
+                <span class="t">T</span>
+                <span>orrent</span>
+                <span class="t"> P</span>
+                <span>ower</span>
+            </div>
+        </div>
+        <form class="example-form" [formGroup]="loginForm"
+            (ngSubmit)="loginUser()">
+            <div class="login_text">LOGIN</div>
+            <div class="login_form">
+                <div class="employee_id">
+                    <div class="enter_id_mobile">
+                        Employee ID
+                        <div class="input_id_mobile">
+                            <input type="text" class="input_tag_mobile"
+                                formControlName="id">
+                        </div>
+                        <span class="text-danger validation_text"
+                                *ngIf="(registerFormControl.id.touched || registerFormControl.id.dirty) && registerFormControl.id.errors?.['minlength'] && submitted">
+                                Length of Employee ID should be atleast 3.
+                            </span>
+                            <span class="text-danger validation_text"
+                                *ngIf="(registerFormControl.id.touched || registerFormControl.id.dirty) && registerFormControl.id.errors?.['required'] && submitted">
+                                Employee is required
+                            </span>
+                    </div>
+                </div>
+                <div class="employee_id">
+                    <div class="enter_id_mobile">
+                        Password
+                        <div class="input_id_mobile">
+                            <input type="password" class="input_tag_mobile"
+                                formControlName="password">
+                        </div>
+                        
+                            <span class="text-danger validation_text"
+                                *ngIf="(registerFormControl.password.touched || registerFormControl.password.dirty) && registerFormControl.password.errors?.['required'] && submitted">
+                                Password is required
+                            </span>
+                    </div>
+                </div>
+                <div class="checkbox_forgot">
+                    <div>
+                        <input type="checkbox" id="remember_login"
+                            formControlName="remember">&nbsp;&nbsp;<label
+                            for="remember_login">Remember Me</label>
+                    </div>
+                    <div class="checkbox_remember_mobile">
+                        <a routerLink="/forgot-password">Forgot Password</a>
+                    </div>
+                </div>
+                <div class="login_button">
+                    <button class="login_button_text_mobile" type="submit">Login</button>
+                </div>
+                <div class="sign_up_text">
+                    Don’t have an account? <span><a routerLink="/register">SIGN
+                            UP</a></span>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>

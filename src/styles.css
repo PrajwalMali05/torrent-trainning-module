@@ -1,0 +1,34 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body{
+    background-color: #2e3b48;
+} */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    margin: 0;
+  }
+  
+  :root {
+    /* fonts */
+    --font-roboto: Roboto;
+    --font-ravie: Ravie;
+  
+    /* font sizes */
+    --font-size-xl: 20px;
+    --font-size-5xl: 24px;
+  
+    /* Colors */
+    --color-white: #fff;
+    --color-darkorange: #ed891a;
+    --color-dimgray: #625d5d;
+    --color-darkgray: #9c9c9c;
+  }
+  .mat-progress-spinner circle, .mat-spinner circle {
+    stroke: #ed891a!important;
+}

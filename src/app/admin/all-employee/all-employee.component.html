@@ -1,0 +1,41 @@
+
+<div>
+    <button mat-raised-button class="add_button" routerLink="/admin/add-user">Add User</button> <br>
+    <mat-spinner *ngIf="spinner"> </mat-spinner> 
+ <table class="table table-striped" *ngIf="!spinner">
+    <thead>
+        <tr>
+            <th scope="col">Employee ID</th>
+            <th scope="col">Player Name</th>
+            <th scope="col">PSC</th>
+            <th scope="col">Department</th>
+            <th scope="col">Assign Course</th>
+            <th scope="col">Progress</th>
+            <th scope="col">Edit</th>
+            <th scope="col">View Progress</th>
+        </tr>
+    </thead>
+    <tbody> 
+        <tr *ngFor="let emp of allEmployees">
+            <th scope="row">{{emp?.employeeId}}</th>
+            <td>{{emp?.player_name}}</td>
+            <td>{{emp?.psc}}</td>
+            <td>{{emp?.department}}</td>
+            <td><button mat-stroked-button color="primary" 
+                    [routerLink]="['/emp',emp?.employeeId]">{{emp.course.length>0?'Assigned':'Assign' }}</button></td>
+            <td>{{emp.course.length>0?emp.course[0].status==0?'Not started yet':emp.course[0].status==1?'In Progress':'Completed':'Course not Assigned' }}</td>
+            <td>
+                <button type="button" mat-icon-button color="primary" [routerLink]="['/admin/edit-user',emp?.employeeId]"> 
+                    <mat-icon>edit</mat-icon>
+                  </button>
+            </td>
+            <td>
+                <button mat-stroked-button disabled *ngIf="!emp.course.length>0">Assign Course</button>
+                 <button *ngIf="emp.course.length>0" mat-stroked-button [routerLink]="['/admin/see-progress/',emp?.employeeId]" color="primary">
+                    View Progress
+                </button> 
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>

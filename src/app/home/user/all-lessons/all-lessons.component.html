@@ -1,0 +1,24 @@
+<div class="container">
+    <div *ngIf="!userLesson">
+        <h4> No course is assigned to you, please contact admin</h4>
+    </div>
+    <div *ngIf="userLesson">
+    Course Name: <h4>{{userLesson[0].c_name}} </h4>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Lesson</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let lesson of userLesson">
+            <th scope="row">{{lesson?.l_name}}</th>
+            <td><button (click)="goToView(lesson)" mat-stroked-button color="primary" >
+                {{lesson.l_status==0?'Start Lesson':lesson.l_status==1?'In Progress':'Completed'}}</button></td>
+        </tr>
+    </tbody>
+</table>
+</div>
+</div>
+

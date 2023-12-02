@@ -1,0 +1,73 @@
+<div class="view_course_container">
+    <!-- <div class="container">
+        <button mat-raised-button class="add_button" routerLink="/admin/add-course">Add Course</button>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Course Name</th>
+                    <th scope="col">Course Order</th>
+                    <th scope="col">Edit Course</th>
+                    <th scope="col">Delete Course</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let course of allCourses">
+                    <th scope="row">{{course?.c_name}}</th>
+                    <td>{{course?.c_order}}</td>
+                    <td><mat-icon>edit</mat-icon></td>
+                    <td> <mat-icon class="delete-btn" (click)="deleteCourse(course.c_id)">
+                            delete_forever</mat-icon></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div> -->
+    <mat-spinner *ngIf="spinner"> </mat-spinner>
+    <div class="table-container" *ngIf="!spinner">
+      <button mat-raised-button class="add_button" routerLink="/admin/add-course">Add Course</button>
+        <table mat-table [dataSource]="dataSource" matSort>
+    
+          <!-- ID Column -->
+          <ng-container matColumnDef="c_id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+            <td mat-cell *matCellDef="let row"> {{row.c_id}} </td>
+          </ng-container>
+    
+          <!-- Progress Column -->
+          <ng-container matColumnDef="c_name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Course Name </th>
+            <td mat-cell *matCellDef="let row"> {{row.c_name}} </td>
+          </ng-container>
+          <ng-container matColumnDef="c_order">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Course Order</th>
+            <td mat-cell *matCellDef="let row"> {{row.c_order}}</td>
+          </ng-container>
+    
+          
+    
+          <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+            <td mat-cell *matCellDef="let row">
+              <!-- <button mat-icon-button color="primary" (click)="openEditForm(row)">  -->
+              <button type="button" mat-icon-button color="primary" [routerLink]="['/admin/edit-course',row.c_id]"> 
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-icon-button color="warn" (click)="deleteCourse(row.c_id,row.c_name)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+    
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    
+          <!-- Row shown when there is no matching data. -->
+          <!-- <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+          </tr> -->
+        </table>
+    
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+      </div>
+</div>
+

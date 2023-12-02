@@ -1,0 +1,54 @@
+<form [formGroup]="updateLessonForm" (ngSubmit)="updateLesson()">
+   
+    <div class="form-group row col-md-6">
+        <label class="my-1 mr-2 label_course" for="select_course"
+            style="justify-content: left;">Select
+            Course</label>
+        <select class="custom-select my-1 mr-sm-2" id="select_course"
+            (change)="loadSubMenu($event.target.value)"
+            formControlName="p_id">
+            <option selected value>Assign Course...</option>
+            <option *ngFor="let c of course" value={{c.c_id}} selected="{{data.c_name == c.c_name}}">
+                {{c.c_name}}
+            </option>
+        </select>
+    </div>
+    <!-- <div *ngIf="step1">
+    <div formArrayName="lessons">
+    <div *ngFor="let lesson of lessonControl.controls; let i =index" class="row" style="padding-left: 15px;">
+        
+        <div [formGroupName]="i" class="row_" >             
+            <mat-card>
+                <mat-card-header>
+                  <mat-card-title>Lesson {{i+1}}</mat-card-title></mat-card-header>
+                  <mat-card-content>
+                  <label for="lesson_name">Lessons Name</label>
+                  <input type="text" class="form-control" id="lesson_name" placeholder="Lesson Name" formControlName="l_name">
+                  <label for="lesson_order">Lessons Order</label>
+                  <input type="number" class="form-control" id="lesson_order" placeholder="Lesson Order" formControlName="l_order">
+                </mat-card-content>                    
+                <mat-card-actions>
+                    <mat-icon class="delete-btn" (click)="deleteLesson(i)">
+                        delete_forever</mat-icon>
+                </mat-card-actions>
+              </mat-card> 
+        </div> 
+    </div>
+    <div class="btn">
+        <button type="button" class="btn btn-warning my-1" (click)="addNewLesson(2)">Add Lesson</button>
+    </div>
+</div>
+</div> -->
+<div class="form-group">
+    <label for="course-text">Enter Lesson Name</label>
+    <input type="text" class="form-control" id="course-text"
+        placeholder="Enter Lesson name" formControlName="l_name">
+</div>
+<div class="form-group">
+    <label for="course-text">Enter Lesson order</label>
+    <input type="number" class="form-control" id="course-text"
+        placeholder="Enter Lesson order" formControlName="l_order">
+</div>
+    <button type="submit" class="btn btn-primary my-1" routerLink="/admin/view-lesson" [mat-dialog-close]="false">Cancel</button>&nbsp;
+    <button type="submit" class="btn btn-primary my-1" >Submit</button>&nbsp;
+</form>

@@ -1,0 +1,28 @@
+<div class="view_course_container">
+    <mat-spinner *ngIf="spinner"> </mat-spinner>
+    <div class="container" *ngIf="!spinner">
+        <button mat-raised-button class="add_button" routerLink="/admin/add-lesson">Add Lesson</button>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Lesson Name</th>
+                    <th scope="col">Course ID</th>
+                    <th scope="col">Lesson Order</th>
+                    <th scope="col">Edit Lesson</th>
+                    <th scope="col">Delete Lesson</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let lesson of allLessons">
+                    <th scope="row">{{lesson?.l_name}}</th>
+                    <th >{{lesson?.p_id}}</th>
+                    <td>{{lesson?.l_order}}</td>
+                    <td><mat-icon [routerLink]="['/admin/edit-lesson', lesson?.p_id]">edit</mat-icon></td>
+                    <td> <mat-icon class="delete-btn" (click)="deleteLesson(lesson.l_id,lesson.l_name)">
+                            delete_forever</mat-icon></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>

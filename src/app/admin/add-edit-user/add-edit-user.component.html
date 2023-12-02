@@ -1,0 +1,64 @@
+<form [formGroup]="addUserForm" (ngSubmit)="addUser()" *ngIf="!isEdit">
+    <div class="col-md-6 mb-3">
+        <label for="employee">Employee ID</label>
+        <input type="text" class="form-control" id="employee"
+        formControlName="id" placeholder="Ex 1111" required>
+    </div>
+    <div class="col-md-6 mb-3">
+        <label for="playerName">Player Name</label>
+        <input type="text" class="form-control" id="player_name"
+        formControlName="playerName" placeholder="John Doe" required>
+    </div>
+    <div class="col-md-6 mb-3">
+        <label for="psc">PSC</label>
+        <input type="text" class="form-control" id="psc" placeholder="PSC" formControlName="psc">
+    </div>
+    <div class="col-md-6 mb-3">
+        <label for="dept">Department</label>
+        <input type="text" class="form-control" id="dept" placeholder="Department" formControlName="dept">
+    </div>
+    <div class="col-md-6 mb-3">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="password" formControlName="password"
+            required>
+    </div>
+    <div class="login_button">
+        <button class="login_button_text" mat-raised-button type="submit">Add User</button>
+        <button class="login_button_text" routerLink="/admin/" mat-raised-button type="button">Cancel</button>
+    </div>
+</form>
+
+<form [formGroup]="updateUserForm" (ngSubmit)="updateUser()" *ngIf="isEdit">
+    <div class="col-md-6 mb-3" style="display: none;">
+        <label for="employee">ID</label>
+        <input type="text" class="form-control" id="employee"
+        formControlName="id" placeholder="Ex 1111" required>
+    </div>
+    <div class="col-md-6 mb-3">
+        <label for="employee">Employee ID</label>
+        <input type="text" readonly class="form-control" id="employee"
+        formControlName="employeeId" placeholder="Ex 1111" required>
+    </div>
+    <div class="col-md-6 mb-3">
+        <label for="playerName">Player Name</label>
+        <input type="text" class="form-control" id="player_name"
+        formControlName="player_name" placeholder="John Doe" required>
+    </div>
+    <div class="col-md-6 mb-3">
+        <label for="psc">PSC</label>
+        <input type="text" class="form-control" id="psc" placeholder="PSC" formControlName="psc">
+    </div>
+    <div class="col-md-6 mb-3">
+        <label for="dept">Department</label>
+        <input type="text" class="form-control" id="dept" placeholder="Department" formControlName="department">
+    </div>
+    <div class="col-md-6 mb-3">
+        <label for="password">Password</label>
+        <input type="password" readonly class="form-control" id="password" placeholder="password" formControlName="password"
+            required>
+    </div>
+    <div class="login_button">
+        <button class="login_button_text" mat-raised-button type="submit">Edit User</button>
+        <button class="login_button_text" routerLink="/admin/" mat-raised-button type="button">Cancel</button>
+    </div>
+</form>

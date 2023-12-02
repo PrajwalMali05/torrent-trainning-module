@@ -1,0 +1,13 @@
+.center{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+}
+mat-icon:hover{
+    cursor: pointer;
+}
+.row_{
+    display: flex;
+}

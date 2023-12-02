@@ -1,0 +1,24 @@
+<div class="view_course_container">
+    <div class="container">
+        <button mat-raised-button class="add_button" routerLink="/admin">Go back</button>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Lesson Name</th>
+                    <th scope="col">Course Status</th>
+                    <th scope="col">Marks Recieved</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let lesson of allLessons">
+                    <th scope="row">{{lesson?.l_name}}</th>
+                    <td>{{lesson?.l_status == 0? 'Not started yet':lesson?.l_status == 1?'In Progress':'Completed' }}</td>
+                    <td>{{lesson?.mark_received == null? '0':lesson?.mark_received }}</td>
+
+                </tr>
+            </tbody>
+            <td> Total Mark Recieved {{mark_received}}</td>
+        </table>
+
+    </div>
+</div>

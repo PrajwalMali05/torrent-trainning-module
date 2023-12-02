@@ -1,0 +1,46 @@
+{
+  "user": [
+    {
+      "playerName": "Admin",
+      "id": 1234,
+      "psc": "abcd",
+      "dept": "developer",
+      "password": "admin"
+    },
+    {
+      "playerName": "Sandy",
+      "id": 4545,
+      "psc": "Jaudya",
+      "dept": "Developer",
+      "password": "1234"
+    },
+    {
+      "playerName": "Prajwal",
+      "id": 7894,
+      "psc": "Does not Matter",
+      "dept": "Developer",
+      "password": "admin"
+    },
+    {
+      "playerName": "New Player",
+      "id": 5656,
+      "psc": "Does not matter",
+      "dept": "Dev",
+      "password": "admin"
+    },
+    {
+      "playerName": "ABCD",
+      "id": 1111,
+      "psc": "demo",
+      "dept": "dev",
+      "password": "1234"
+    },
+    {
+      "playerName": "abc",
+      "id": 7895,
+      "psc": "dev",
+      "dept": "dev",
+      "password": "987654321"
+    }
+  ]
+}
